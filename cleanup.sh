@@ -22,6 +22,9 @@ rmdir /tmp/vboxadditions
 apt-get -y purge linux-headers-virtual
 apt-get -y clean
 apt-get -y autoremove
+echo "Remove hosts entries"
+sed -i '/elastic64/d' /etc/hosts
+sed -i '/vagrant.vm/d' /etc/hosts
 echo "Removing cleanup script"
 sed -i '/cleanup.sh/d' /etc/rc.local
 echo "zero'ing data"
