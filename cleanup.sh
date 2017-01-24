@@ -7,9 +7,9 @@ wget --no-check-certificate https://raw.github.com/mitchellh/vagrant/master/keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 echo "Installing guest additions"
-wget -c http://download.virtualbox.org/virtualbox/5.0.24/VBoxGuestAdditions_5.0.24.iso -O /tmp/VBoxGuestAdditions_5.0.24.iso
+wget -c http://download.virtualbox.org/virtualbox/5.1.14/VBoxGuestAdditions_5.1.14.iso -O /tmp/VBoxGuestAdditions_5.1.14.iso
 mkdir /tmp/vboxadditions
-mount /tmp/VBoxGuestAdditions_5.0.24.iso -o loop /tmp/vboxadditions
+mount /tmp/VBoxGuestAdditions_5.1.14.iso -o loop /tmp/vboxadditions
 cd /tmp/vboxadditions && sh VBoxLinuxAdditions.run --nox11
 umount /tmp/vboxadditions
 # /etc/init.d/vboxadd setup
@@ -17,7 +17,7 @@ umount /tmp/vboxadditions
 # chkconfig vboxadd on
 echo "Cleaning up"
 sleep 1
-rm /tmp/VBoxGuestAdditions_5.0.24.iso
+rm /tmp/VBoxGuestAdditions_5.1.14.iso
 rmdir /tmp/vboxadditions
 apt-get -y purge linux-headers-virtual
 apt-get -y clean
