@@ -20,7 +20,7 @@ apt-mark hold grub-common grub-pc grub-pc-bin grub2-common
 apt-get -y -o Dpkg::Options::="--force-confold" upgrade
 
 echo "Installing guest additions"
-wget -q -c http://download.virtualbox.org/virtualbox/5.1.14/VBoxGuestAdditions_5.1.14.iso -O /tmp/VBoxGuestAdditions_5.1.14.iso
+wget -q -c https://download.virtualbox.org/virtualbox/5.2.10/VBoxGuestAdditions_5.2.10.iso -O /tmp/VBoxGuestAdditions_5.1.14.iso
 sleep 1
 mkdir /tmp/vboxadditions
 sleep 2
